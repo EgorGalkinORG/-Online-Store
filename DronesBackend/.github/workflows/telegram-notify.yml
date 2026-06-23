@@ -1,0 +1,192 @@
+name: Telegram PR Notifications
+
+on:
+    pull_request:
+        types: [opened, synchronize, reopened, ready_for_review]
+    pull_request_review:
+        types: [submitted]
+    pull_request_review_comment:
+        types: [created]
+    issue_comment:
+        types: [created]
+
+jobs:
+    notify:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Send personalized Telegram notifications
+              env:
+                  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+                  USER_MAPPING: ${{ secrets.TELEGRAM_USER_MAPPING }}
+              run: |
+                  send_message() {
+                    local github_user=$1
+                    local message=$2
+                    
+                    local chat_id=$(echo "$USER_MAPPING" | tr ',' '\n' | grep "^${github_user}:" | cut -d':' -f2)
+                    
+                    if [ -n "$chat_id" ]; then
+                      local json_message=$(echo -n "$message" | jq -Rs .)
+                      local response=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+                        -H "Content-Type: application/json" \
+                        -d "{\"chat_id\": ${chat_id}, \"text\": ${json_message}, \"parse_mode\": \"HTML\", \"disable_web_page_preview\": true}")
+                      
+                      echo "Sent to $github_user (chat_id: $chat_id)"
+                      echo "Response: $response"
+                    else
+                      echo "No chat_id found for user: $github_user"
+                    fi
+                  }
+
+                  PR_NUMBER="${{ github.event.pull_request.number || github.event.issue.number }}"
+                  PR_TITLE="${{ github.event.pull_request.title || github.event.issue.title }}"
+                  PR_URL="${{ github.event.pull_request.html_url || github.event.issue.html_url }}"
+                  PR_AUTHOR="${{ github.event.pull_request.user.login || github.event.issue.user.login }}"
+                  REPO_NAME="${{ github.repository }}"
+                  EVENT_NAME="${{ github.event_name }}"
+                  IS_PULL_REQUEST="${{ github.event.issue.pull_request }}"
+                  ACTION="${{ github.event.action }}"
+
+                  # Handle PR reviews
+                  if [ "$EVENT_NAME" = "pull_request_review" ]; then
+                    REVIEWER="${{ github.event.review.user.login }}"
+                    STATE="${{ github.event.review.state }}"
+                    REVIEW_URL="${{ github.event.review.html_url }}"
+                    
+                    case "$STATE" in
+                      approved)
+                        MESSAGE="✅ <b>Your PR #${PR_NUMBER} got approved!</b>
+
+                  📝 ${PR_TITLE}
+                  👍 Approved by: @${REVIEWER}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${PR_URL}'>Check it out</a>"
+                        send_message "$PR_AUTHOR" "$MESSAGE"
+                        ;;
+                      changes_requested)
+                        MESSAGE="🔧 <b>Changes needed on PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 Reviewer: @${REVIEWER}
+                  💬 Time to fix some stuff
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${REVIEW_URL}'>See what's up</a>"
+                        send_message "$PR_AUTHOR" "$MESSAGE"
+                        ;;
+                      commented)
+                        MESSAGE="💬 <b>New review comment on PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 From: @${REVIEWER}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${REVIEW_URL}'>Read it</a>"
+                        send_message "$PR_AUTHOR" "$MESSAGE"
+                        ;;
+                    esac
+                  fi
+
+                  # Handle PR review comments
+                  if [ "$EVENT_NAME" = "pull_request_review_comment" ]; then
+                    COMMENTER="${{ github.event.comment.user.login }}"
+                    COMMENT_URL="${{ github.event.comment.html_url }}"
+                    
+                    if [ "$COMMENTER" != "$PR_AUTHOR" ]; then
+                      MESSAGE="💭 <b>Code comment on your PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 From: @${COMMENTER}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${COMMENT_URL}'>Check the comment</a>"
+                      send_message "$PR_AUTHOR" "$MESSAGE"
+                    fi
+                  fi
+
+                  # Handle issue comments (PR comments)
+                  if [ "$EVENT_NAME" = "issue_comment" ] && [ -n "$IS_PULL_REQUEST" ]; then
+                    COMMENTER="${{ github.event.comment.user.login }}"
+                    COMMENT_URL="${{ github.event.comment.html_url }}"
+                    
+                    if [ "$COMMENTER" != "$PR_AUTHOR" ]; then
+                      MESSAGE="💬 <b>Reply on your PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 From: @${COMMENTER}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${COMMENT_URL}'>See the reply</a>"
+                      send_message "$PR_AUTHOR" "$MESSAGE"
+                    else
+                      # Author replied - notify reviewers
+                      REVIEWERS="${{ join(github.event.issue.assignees.*.login, ',') }}"
+                      
+                      if [ -n "$REVIEWERS" ]; then
+                        IFS=',' read -ra REVIEWER_ARRAY <<< "$REVIEWERS"
+                        for reviewer in "${REVIEWER_ARRAY[@]}"; do
+                          reviewer=$(echo "$reviewer" | xargs)
+                          if [ "$reviewer" != "$PR_AUTHOR" ]; then
+                            MESSAGE="💬 <b>Author replied in PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 From: @${PR_AUTHOR}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${COMMENT_URL}'>Check the reply</a>"
+                            send_message "$reviewer" "$MESSAGE"
+                          fi
+                        done
+                      fi
+                    fi
+                  fi
+
+                  # Handle PR events (opened, synchronize, ready_for_review)
+                  if [ "$EVENT_NAME" = "pull_request" ]; then
+                    REVIEWERS="${{ join(github.event.pull_request.requested_reviewers.*.login, ',') }}"
+                    
+                    case "$ACTION" in
+                      opened)
+                        if [ -n "$REVIEWERS" ]; then
+                          IFS=',' read -ra REVIEWER_ARRAY <<< "$REVIEWERS"
+                          for reviewer in "${REVIEWER_ARRAY[@]}"; do
+                            reviewer=$(echo "$reviewer" | xargs)
+                            MESSAGE="🆕 <b>New PR #${PR_NUMBER} needs your review</b>
+
+                  📝 ${PR_TITLE}
+                  👤 Author: @${PR_AUTHOR}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${PR_URL}'>Start reviewing</a>"
+                            send_message "$reviewer" "$MESSAGE"
+                          done
+                        fi
+                        ;;
+                      synchronize)
+                        if [ -n "$REVIEWERS" ]; then
+                          COMMITS_URL="${PR_URL}/commits"
+                          IFS=',' read -ra REVIEWER_ARRAY <<< "$REVIEWERS"
+                          for reviewer in "${REVIEWER_ARRAY[@]}"; do
+                            reviewer=$(echo "$reviewer" | xargs)
+                            MESSAGE="🔄 <b>Fresh changes in PR #${PR_NUMBER}</b>
+
+                  📝 ${PR_TITLE}
+                  👤 Author: @${PR_AUTHOR}
+                  ✨ New commits pushed
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${COMMITS_URL}'>See what changed</a>"
+                            send_message "$reviewer" "$MESSAGE"
+                          done
+                        fi
+                        ;;
+                      ready_for_review)
+                        if [ -n "$REVIEWERS" ]; then
+                          IFS=',' read -ra REVIEWER_ARRAY <<< "$REVIEWERS"
+                          for reviewer in "${REVIEWER_ARRAY[@]}"; do
+                            reviewer=$(echo "$reviewer" | xargs)
+                            MESSAGE="✨ <b>PR #${PR_NUMBER} is ready for review</b>
+
+                  📝 ${PR_TITLE}
+                  👤 Author: @${PR_AUTHOR}
+                  📦 Repo: ${REPO_NAME}
+                  🔗 <a href='${PR_URL}'>Let's review this</a>"
+                            send_message "$reviewer" "$MESSAGE"
+                          done
+                        fi
+                        ;;
+                    esac
+                  fi

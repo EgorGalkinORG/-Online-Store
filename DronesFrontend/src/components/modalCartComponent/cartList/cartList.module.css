@@ -1,0 +1,14 @@
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.listWrapper > div {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 2vh 0;
+}
+
+.listWrapper > div:last-child {
+    border-bottom: none;
+}

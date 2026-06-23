@@ -1,0 +1,180 @@
+.container {
+	width: 31.041vw;
+	height: fit-content;
+	min-height: 41.48vh;
+	display: flex;
+	flex-direction: column;
+	border-radius: calc(0.347vw + 0.587vh);
+	background-color: #fff;
+}
+.modalHeader {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	min-height: 7.05vh;
+	height: fit-content;
+	width: 100%;
+	padding: 1.88vh 1.666vw;
+	gap: 0.694vw;
+}
+.modalHeader > a {
+	width: fit-content;
+	min-width: 16.319vw;
+	height: fit-content;
+	min-height: 3.29vh;
+	font-weight: 500;
+	font-size: 2.35vh;
+	text-decoration: none;
+	color: #9ea0aa;
+}
+.modalHeader > a > span {
+	color: #0c122a;
+}
+.modalBody {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	min-height: 34.43vh;
+	width: 100%;
+	padding: 1.88vh 1.666vw;
+	gap: 5.17vh;
+}
+.modalFields {
+	min-width: 26.944vw;
+	width: fit-content;
+	min-height: 20.681vh;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1.88vh;
+}
+.modalButtons {
+	width: 100%;
+	min-height: 4.817vh;
+	height: fit-content;
+	gap: 1.111vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+.modalCancel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	min-width: 8.333vw;
+	height: 4.817vh;
+	padding: 1.41vh 1.111vw;
+	gap: 0.833vw;
+	color: #0c122a;
+	border: 0.124vw solid #0c122a;
+	border-radius: 100vw;
+	background: none;
+}
+.modalCancel > span {
+	font-weight: 500;
+	letter-spacing: 0.09em !important;
+	line-height: 100%;
+	font-size: 1.645vh;
+	cursor: pointer;
+}
+.modalLogin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: 4.817vh;
+	padding: 1.41vh 1.111vw;
+	gap: 0.833vw;
+	color: #fff;
+	border: 0.124vw solid #0c122a;
+	border-radius: 100vw;
+	background-color: #0c122a;
+}
+.modalLogin > span {
+	font-weight: 500;
+	letter-spacing: 0.09em !important;
+	line-height: 100%;
+	font-size: 1.645vh;
+	cursor: pointer;
+}
+.modalForgotPassword {
+	font-weight: 400;
+	font-size: 1.645vh;
+	text-decoration: none;
+	color: #9ea0aa;
+}
+.modalField {
+	position: relative;
+	width: 26.944vw;
+	height: fit-content;
+	min-height: 7.52vh;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 0.94vh;
+}
+.modalField > label {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	color: #0c122a;
+	font-size: 1.645vh;
+}
+.modalField > input {
+	background-color: #ffffff;
+	width: 100%;
+	height: 4.7vh;
+	border: 0.104vh solid #ced0d4;
+	border-radius: 0.47vh;
+	padding: 0 1.111vw;
+	outline: none;
+	display: flex;
+	flex-direction: row;
+	font-size: 1.88vh;
+}
+.modalField > input::placeholder {
+	display: flex;
+	flex-direction: row;
+	font-size: 1.88vh;
+	font-weight: 400;
+	color: #9ea0aa;
+}
+.modalPasswordEye {
+	height: 1.88vh;
+	width: 1.111vw;
+	position: absolute;
+	left: 24.722vw;
+	top: 4.23vh;
+	cursor: pointer;
+}
+.modalBottomButtons {
+	display: flex;
+	flex-direction: column;
+	gap: 1.88vh;
+	width: 100%;
+	height: fit-content;
+}
+.modalBottomButtons > p {
+	color: #9ea0aa;
+	font-weight: 400;
+	font-size: 1.645vh;
+}
+.modalBottomButtons > p > span {
+	color: #b62d11;
+	font-weight: 400;
+	font-size: 1.645vh;
+}
+.modalCloseButton {
+	width: fit-content;
+	height: fit-content;
+	position: absolute;
+	top: 0.94vh;
+	left: 27.986vw;
+	width: 2.222vw;
+	height: 3.76vh;
+	cursor: pointer;
+}

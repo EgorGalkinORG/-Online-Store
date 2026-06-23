@@ -1,0 +1,1 @@
+export { RecoverySuccessPage } from "./RecoverySuccess";

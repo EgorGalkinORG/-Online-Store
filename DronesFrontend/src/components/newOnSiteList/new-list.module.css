@@ -1,0 +1,11 @@
+.newList{
+	position: absolute;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: fit-content;
+	gap: 1.666vw;
+	top: 200.126vh;
+}

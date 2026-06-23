@@ -1,0 +1,1 @@
+export { ModalCart } from "./modalCart";

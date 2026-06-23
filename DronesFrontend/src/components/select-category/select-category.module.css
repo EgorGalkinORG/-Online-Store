@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    padding: 3vh 0;
+}
+
+.categoryBtn {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: 0.15vw solid #e0e2e6;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+
+.categoryBtn:first-child {
+    background-color: #f5f7f9;
+}
+
+.categoryBtn:hover,.categoryBtn.active {
+    border-color: #a0a4ab;
+    transform: translateY(-0.3vh);
+}
+
+.categoryImage {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.allText {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #1a1c22;
+}

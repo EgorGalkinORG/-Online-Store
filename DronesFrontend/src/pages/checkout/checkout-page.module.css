@@ -1,0 +1,45 @@
+.whiteSpace{
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    background-color: #fff;
+}
+.leftContent{
+    position: absolute;
+    left: 2.777vw;
+    top: 17.743vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5.17vh;
+    width: 100%;
+    max-width: 46.388vw;
+    height: fit-content;
+}
+.PlaceAnOrder{
+    width: 46.388vw;
+    height: 3.995vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 3.525vh;
+    line-height: 100%;
+    letter-spacing: 3%;
+    color: #0C122A;
+    font-weight: 400;
+}
+.sections{
+    display: flex;
+    flex-direction: column;
+    gap: 2.82vh;
+    height: fit-content;
+    width: 100%;
+
+}
+.line{
+    display: flex;
+    height: 0.117vh;
+    width: 100%;
+    background-color: #CDD5DD;
+
+}

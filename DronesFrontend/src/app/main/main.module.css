@@ -1,0 +1,8 @@
+main {
+	position: relative;
+	width: 100vw;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	z-index: 10;
+}

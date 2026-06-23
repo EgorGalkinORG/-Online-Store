@@ -1,0 +1,165 @@
+.CardContainer{
+    position: relative;
+	width: 30.347vw;
+    height: 64.747vh;
+    display: flex;
+    flex-direction: column;
+}
+.firstNewCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/firstCardBackground.svg");
+	background-size: cover;
+}
+.firstNewCardImage {
+	position: absolute;
+    top: 0;
+    left: 50%;
+	width: 18.44vw;
+	height: 31.203vh;
+	z-index: 2;
+    transform: translateX(-50%) translateY(-50%);
+}
+.secondNewCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/secondCardBackground.svg");
+	background-size: cover;
+}
+.thirdNewCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/thirdCardBackground.svg");
+	background-size: cover;
+}
+.gradientOfFirstNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #f5be4f, transparent);
+}
+.gradientOfSecondNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #1a271b, transparent);
+}
+.gradientOfThirdNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #4f94a4, transparent);
+}
+.firstNewCardContent,
+.secondNewCardContent,
+.thirdNewCardContent {
+	width: 30.347vw;
+	height: 27.379vh;
+	display: flex;
+	flex-direction: column;
+	gap: 8.108vh;
+	padding: 2.82vh 1.666vw;
+}
+.firstNewCardTextBlock,
+.secondNewCardTextBlock,
+.thirdNewCardTextBlock {
+	width: 27.013vw;
+	min-height: 8.93vh;
+	height: fit-content;
+	gap: 0.94vh;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+}
+.thirdNewCardTextTitle,
+.secondNewCardTextTitle,
+.firstNewCardTextTitle {
+	font-weight: 500;
+	font-size: 5.17vh;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #fff;
+}
+.firstNewCardTextDesc,
+.secondNewCardTextDesc,
+.thirdNewCardTextDesc {
+	font-weight: 400;
+	font-size: 1.88vh;
+	color: #fff;
+}
+.thirdNewCardToBuyBlock,
+.firstNewCardToBuyBlock,
+.secondNewCardToBuyBlock {
+	width: 27.013vw;
+	height: 4, 7vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.thirdNewCardToBuyPrice,
+.secondNewCardToBuyPrice,
+.firstNewCardToBuyPrice {
+	font-weight: 500;
+	font-size: 1.692vh;
+	color: #fff;
+	height: fit-content;
+	width: fit-content;
+}
+.thirdNewCardToBuyBlock > a,
+.secondNewCardToBuyBlock > a,
+.firstNewCardToBuyBlock > a {
+	width: 8.472vw;
+	height: 4.7vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.972vw;
+	padding: 1.41vh 1.111vw;
+	border: 0.117vh solid #fff;
+	border-radius: 50vw;
+}
+.thirdNewCardToBuyBlock > a > p,
+.secondNewCardToBuyBlock > a > p,
+.firstNewCardToBuyBlock > a > p {
+	width: fit-content;
+	height: fit-content;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.645vh;
+	letter-spacing: 9%;
+	color: #fff;
+}
+.thirdNewCardToBuyBlock > a > svg,
+.secondNewCardToBuyBlock > a > svg,
+.firstNewCardToBuyBlock > a > svg {
+	width: 1.111vw;
+	height: 1.88vh;
+	fill: #fff;
+}

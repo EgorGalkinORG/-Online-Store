@@ -1,0 +1,117 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.175vh 2.777vw;
+	position: fixed;
+	top: 4.935vh;
+	left: 2.777vw;
+	width: 94.444vw;
+	height: 7.52vh;
+	background-color: rgb(255 255 255 / 50%);
+	border-radius: 50vh;
+	border: 0.101vh solid #e4e4e7;
+	z-index: 100000000000;
+}
+.header > a {
+	width: fit-content;
+	height: fit-content;
+}
+.headerLinks {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: fit-content;
+	height: fit-content;
+	gap: 2.291vw;
+}
+.headerLink {
+	font-size: 1.6451vh;
+	font-weight: 500;
+	letter-spacing: 9%;
+	color: #0c122a;
+}
+.headerLogo {
+	display: flex;
+	flex-direction: row;
+	width: 7.5vw;
+	height: 2.467vh;
+}
+.headerProfile {
+	display: flex;
+	flex-direction: row;
+	gap: 1.666vw;
+	height: 5.17vh;
+	width: 18.125vw;
+	justify-content: end;
+	align-items: center;
+}
+.headerProfile > a {
+	width: fit-content;
+	height: fit-content;
+}
+.headerProfile svg {
+	width: 1.666vw;
+	height: 2.82vh;
+}
+
+.headerProfileCart {
+	position: relative;
+	display: inline-block;
+}
+
+.headerProfileCartIcon,
+.headerProfileCartIconHover {
+	transition: opacity 0.3s ease;
+	display: block;
+}
+
+.headerProfileCartIcon {
+	opacity: 1;
+}
+
+.headerProfileCartIconHover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.headerProfileCart:hover .headerProfileCartIcon {
+	opacity: 0;
+}
+
+.headerProfileCart:hover .headerProfileCartIconHover {
+	opacity: 1;
+}
+
+.headerProfileProfile {
+	position: relative;
+	display: inline-block;
+}
+
+.headerProfileProfileIcon,
+.headerProfileProfileIconHover {
+	transition: opacity 0.3s ease;
+	display: block;
+}
+
+.headerProfileProfileIcon {
+	opacity: 1;
+}
+
+.headerProfileProfileIconHover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.headerProfileProfile:hover .headerProfileProfileIcon {
+	opacity: 0;
+}
+
+.headerProfileProfile:hover .headerProfileProfileIconHover {
+	opacity: 1;
+}

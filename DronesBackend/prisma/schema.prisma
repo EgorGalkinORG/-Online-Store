@@ -1,0 +1,118 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique
+  email        String    @unique
+  phoneNumber  String?
+  name         String
+  surname      String
+  middleName   String?
+  birthday     DateTime?
+  password     String
+  recoveryCode String?
+  addresses    Address[]
+  orders       Order[]
+}
+
+model Address {
+  id          Int     @id @default(autoincrement())
+  city        String
+  street      String
+  houseNumber String
+  entrance    String?
+  flat        String?
+  userId      Int?
+  user        User?   @relation(fields: [userId], references: [id])
+  orders      Order[]
+
+  @@index([userId])
+}
+
+model Order {
+  id                  Int           @id @default(autoincrement())
+  name                String
+  surname             String
+  middleName          String?
+  email               String
+  phoneNumber         String?
+  deliveryAddress     String
+  commentForOrder     String?
+  novaPostOrderNumber String?
+  departureNumber     String?
+  typeOfPayment       String
+  priceReduced        Int?
+  fullPrice           Int
+  userId              Int
+  user                User          @relation(fields: [userId], references: [id])
+  addressId           Int
+  address             Address       @relation(fields: [addressId], references: [id])
+  orderDetails        OrderDetail[]
+
+  @@index([userId])
+  @@index([addressId])
+}
+
+model OrderDetail {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  price     Float
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@unique([orderId, productId])
+}
+
+model Product {
+  id           Int           @id @default(autoincrement())
+  discount     Float?
+  name         String
+  amount       Int
+  price        Float
+  orderDetails OrderDetail[]
+  blocks       Block[]
+  categoryId   Int
+  category     Category      @relation(fields: [categoryId], references: [id])
+  name_trigrams String
+  image String
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  title    String    @unique
+  image    String?
+  products Product[]
+}
+
+model Block {
+  id          Int          @id @default(autoincrement())
+  header      String
+  description String
+  image       String?
+  productId   Int
+  product     Product      @relation(fields: [productId], references: [id])
+  techDetails TechDetail[]
+}
+
+model TechDetail {
+  id             Int    @id @default(autoincrement())
+  characteristic String
+  description    String
+  blockId        Int?
+  block          Block? @relation(fields: [blockId], references: [id])
+}

@@ -1,0 +1,369 @@
+.heading {
+	margin-top: 26.674vh;
+	margin-left: 15.763vw;
+	display: flex;
+	flex-direction: column;
+	gap: 2.82vh;
+	width: 68.472vw;
+	height: 19.271vh;
+}
+.headingText {
+	font-weight: 900;
+	font-size: 7.168vh;
+	letter-spacing: 3%;
+	line-height: 100%;
+	text-align: center;
+	color: #fff;
+}
+.BigDrone {
+	transform: translateX(37.1%) translateY(-25.9%) scale(110%);
+	width: 56.364vw;
+	height: 95.376vh;
+}
+.toCatalog {
+	position: absolute;
+	width: 20.833vw;
+	height: 13.983vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	top: 86.016vh;
+	left: 72.291vw;
+}
+.toCatalog span {
+	color: #0c122a;
+	font-size: 1.88vh;
+	letter-spacing: 0%;
+	line-height: 100%;
+	font-weight: 400;
+}
+.toCatalog a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 13.055vw;
+	height: 6.11vh;
+	padding: 2.115vh 2.777vw;
+	letter-spacing: 9%;
+	font-size: 1.645vh;
+	font-weight: 700;
+	color: #fff;
+	line-height: 100%;
+	border-radius: 50vw;
+	background-color: #0c122a;
+	cursor: pointer;
+}
+.whiteEllipse {
+	display: flex;
+	position: absolute;
+	width: 123.125vw;
+	height: 98.15vh;
+	background-color: #fff;
+	border-radius: 50%;
+	z-index: -1;
+	top: 65.217vh;
+	left: -12.083vw;
+}
+.whiteSpace {
+	display: flex;
+	width: 100vw;
+	height: 218.18vh;
+
+	background-color: #fff;
+	z-index: -1;
+}
+.aboutUsBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	height: fit-content;
+	width: fit-content;
+	min-width: 36.944vw;
+	top: 133.131vh;
+	left: 31.527vw;
+	transform: translateY(-30%);
+	gap: 2.82vh;
+}
+.aboutUsBlock > h3 {
+	font-weight: 900;
+	letter-spacing: 3%;
+	text-align: center;
+	font-size: 5.17vh;
+	color: #cdd5dd;
+	line-height: 100%;
+}
+.aboutUsBlock > span {
+	font-weight: 400;
+	font-size: 1.88vh;
+	color: #0c122a;
+	text-align: center;
+}
+.aboutUsBlock > a {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+	border: 0.176vh solid #0c122a;
+	border-radius: 50vw;
+	padding: 2.115vh 2.777vw;
+	gap: 1.111vw;
+}
+.aboutUsBlock > a > svg {
+	width: 1.666vw;
+	height: 2.82vh;
+}
+.aboutUsBlock > a > p {
+	font-weight: 700;
+	font-size: 1.645vh;
+	letter-spacing: 9%;
+	color: #0c122a;
+}
+.newOnSite {
+	position: absolute;
+	font-weight: 900;
+	font-size: 5.17vh;
+	letter-spacing: 3%;
+	text-align: center;
+	color: #cdd5dd;
+	width: 36.944vw;
+	height: 5.875vh;
+	top: 179.182vh;
+	left: 31.527vw;
+}
+.firstNewCard {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	top: 200.996vh;
+	left: 2.801vw;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/firstCardBackground.svg");
+	background-size: cover;
+}
+.firstNewCardImage {
+	position: absolute;
+	top: 187.535vh;
+	left: 8.731vw;
+	width: 18.44vw;
+	height: 31.203vh;
+	z-index: 2;
+}
+.secondNewCard {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	top: 200.996vh;
+	left: 34.791vw;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/secondCardBackground.svg");
+	background-size: cover;
+}
+.secondNewCardImage {
+	position: absolute;
+	top: 182.119vh;
+	left: 37.708vw;
+	width: 24.583vw;
+	height: 41.598vh;
+	z-index: 2;
+}
+.thirdNewCard {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 30.347vw;
+	height: 51.351vh;
+	top: 200.996vh;
+	left: 66.875vw;
+	border-radius: 1.175vh;
+	background-image: url("../../assets/svg/thirdCardBackground.svg");
+	background-size: cover;
+}
+.thirdNewCardImage {
+	position: absolute;
+	top: 182.119vh;
+	left: 70.763vw;
+	width: 24.583vw;
+	height: 41.598vh;
+	z-index: 2;
+}
+.gradientOfFirstNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #f5be4f, transparent);
+}
+.gradientOfSecondNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #1a271b, transparent);
+}
+.gradientOfThirdNewCard {
+	width: 30.347vw;
+	height: 32.925vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+	border-radius: 1.175vh;
+	background: linear-gradient(to top, #4f94a4, transparent);
+}
+.firstNewCardContent,
+.secondNewCardContent,
+.thirdNewCardContent {
+	width: 30.347vw;
+	height: 27.379vh;
+	display: flex;
+	flex-direction: column;
+	gap: 8.108vh;
+	padding: 2.82vh 1.666vw;
+}
+.firstNewCardTextBlock,
+.secondNewCardTextBlock,
+.thirdNewCardTextBlock {
+	width: 27.013vw;
+	min-height: 8.93vh;
+	height: fit-content;
+	gap: 0.94vh;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+}
+.thirdNewCardTextTitle,
+.secondNewCardTextTitle,
+.firstNewCardTextTitle {
+	font-weight: 500;
+	font-size: 5.17vh;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #fff;
+}
+.firstNewCardTextDesc,
+.secondNewCardTextDesc,
+.thirdNewCardTextDesc {
+	font-weight: 400;
+	font-size: 1.88vh;
+	color: #fff;
+}
+.thirdNewCardToBuyBlock,
+.firstNewCardToBuyBlock,
+.secondNewCardToBuyBlock {
+	width: 27.013vw;
+	height: 4, 7vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.thirdNewCardToBuyPrice,
+.secondNewCardToBuyPrice,
+.firstNewCardToBuyPrice {
+	font-weight: 500;
+	font-size: 1.692vh;
+	color: #fff;
+	height: fit-content;
+	width: fit-content;
+}
+.thirdNewCardToBuyBlock > a,
+.secondNewCardToBuyBlock > a,
+.firstNewCardToBuyBlock > a {
+	width: 8.472vw;
+	height: 4.7vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.972vw;
+	padding: 1.41vh 1.111vw;
+	border: 0.117vh solid #fff;
+	border-radius: 50vw;
+}
+.thirdNewCardToBuyBlock > a > p,
+.secondNewCardToBuyBlock > a > p,
+.firstNewCardToBuyBlock > a > p {
+	width: fit-content;
+	height: fit-content;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.645vh;
+	letter-spacing: 9%;
+	color: #fff;
+}
+.thirdNewCardToBuyBlock > a > svg,
+.secondNewCardToBuyBlock > a > svg,
+.firstNewCardToBuyBlock > a > svg {
+	width: 1.111vw;
+	height: 1.88vh;
+	fill: #fff;
+}
+.CatalogBlock {
+	position: absolute;
+	top: 273.385vh;
+	left: 2.777vw;
+	width: 94.444vw;
+	height: fit-content;
+	min-height: 65.922vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4.7vh;
+	z-index: 100;
+}
+.CatalogBlock > h3 {
+	width: 36.944vw;
+	height: 5.875vh;
+	color: #cdd5dd;
+	text-align: center;
+	letter-spacing: 3%;
+	font-size: 5.17vh;
+	font-weight: 900;
+}
+.catalogProducts {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 2.82vh;
+	column-gap: 1.666vw;
+}
+.toCatalogButton {
+	width: 16.458vw;
+	height: 7.05vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1.111vw;
+	padding: 2.115vh 2.777vw;
+	background-color: #0c122a;
+	border-radius: 50vw;
+}
+.toCatalogButton > svg {
+	width: 1.666vw;
+	height: 2.82vh;
+}
+.toCatalogButton > p {
+	color: #fff;
+	letter-spacing: 9%;
+	font-size: 1.645vh;
+	font-weight: 700;
+}

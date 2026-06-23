@@ -1,0 +1,47 @@
+{
+	"name": "dronesbackend",
+	"version": "1.0.0",
+	"description": "",
+	"homepage": "https://github.com/DmitriyPechenyuk0/DronesBackend#readme",
+	"bugs": {
+		"url": "https://github.com/DmitriyPechenyuk0/DronesBackend/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DmitriyPechenyuk0/DronesBackend.git"
+	},
+	"license": "ISC",
+	"author": "DmitriyPechenyuk0",
+	"type": "commonjs",
+	"main": "server.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "ts-node src/server.ts",
+		"st": "npx prisma studio"
+	},
+	"dependencies": {
+		"@prisma/adapter-better-sqlite3": "^7.1.0",
+		"@prisma/adapter-pg": "^7.1.0",
+		"@prisma/client": "^7.1.0",
+		"@types/cors": "^2.8.19",
+		"@types/express": "^5.0.5",
+		"bcryptjs": "^3.0.3",
+		"better-sqlite3": "^12.5.0",
+		"cors": "^2.8.6",
+		"envalid": "^8.1.1",
+		"express": "^5.2.1",
+		"jsonwebtoken": "^9.0.3",
+		"nodemailer": "^7.0.12",
+		"prettier": "^3.8.1",
+		"prisma": "^7.0.1",
+		"swagger-ui-express": "^5.0.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
+	},
+	"devDependencies": {
+		"@types/jsonwebtoken": "^9.0.10",
+		"@types/node": "^24.10.4",
+		"@types/nodemailer": "^7.0.4",
+		"@types/swagger-ui-express": "^4.1.8"
+	}
+}

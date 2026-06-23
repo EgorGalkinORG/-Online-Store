@@ -1,0 +1,140 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	font-family: "Helvetica", "Arial", sans-serif;
+	color: #333;
+}
+
+.usermeContent {
+	display: flex;
+	gap: 60px;
+}
+
+.usermeContentNavigate {
+	width: 250px;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebarTitle {
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	color: #1a1a2e;
+}
+
+.navLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.navLink {
+	text-decoration: none;
+	color: #999;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: color 0.2s;
+}
+
+.navLink:hover {
+	color: #333;
+}
+
+.active {
+	color: #1a1a2e;
+}
+
+.separator {
+	height: 1px;
+	background-color: #e0e0e0;
+	margin: 30px 0;
+	width: 100%;
+}
+
+.logoutButton {
+	background: none;
+	border: none;
+	text-align: left;
+	color: #999;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 0;
+	letter-spacing: 1px;
+}
+
+.usermeContentMain {
+	flex-grow: 1;
+	max-width: 600px;
+}
+
+.sectionTitle {
+	font-size: 20px;
+	margin-bottom: 25px;
+	color: #1a1a2e;
+}
+
+.formGrid {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.formGroup label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+}
+
+.formGroup input {
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #333;
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.formGroup input::placeholder {
+	color: #aaa;
+}
+
+.formGroup input:focus {
+	border-color: #888;
+}
+
+.saveButton {
+	margin-top: 10px;
+	padding: 12px 30px;
+	background-color: transparent;
+	border: 1px solid #aaa;
+	border-radius: 25px;
+	color: #888;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	width: fit-content;
+	transition: all 0.2s;
+}
+
+.saveButton:hover {
+	background-color: #1a1a2e;
+	color: #fff;
+	border-color: #1a1a2e;
+}

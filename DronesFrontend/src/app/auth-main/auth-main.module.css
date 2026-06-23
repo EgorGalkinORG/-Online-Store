@@ -1,0 +1,87 @@
+.amain {
+	position: relative;
+	width: 100vw;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	z-index: 10000000000000000000000000000000000;
+}
+.heading {
+	margin-top: 26.674vh;
+	margin-left: 15.763vw;
+	display: flex;
+	flex-direction: column;
+	gap: 2.82vh;
+	width: 68.472vw;
+	height: 19.271vh;
+}
+.headingText {
+	font-weight: 900;
+	font-size: 7.168vh;
+	letter-spacing: 3%;
+	line-height: 100%;
+	text-align: center;
+	color: #fff;
+}
+.BigDrone {
+	transform: translateX(37.1%) translateY(-25.9%) scale(110%);
+	width: 56.364vw;
+	height: 95.376vh;
+}
+.toCatalog {
+	position: absolute;
+	width: 20.833vw;
+	height: 13.983vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	top: 86.016vh;
+	left: 72.291vw;
+}
+.toCatalog span {
+	color: #0c122a;
+	font-size: 1.88vh;
+	letter-spacing: 0%;
+	line-height: 100%;
+	font-weight: 400;
+}
+.toCatalog a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 13.055vw;
+	height: 6.11vh;
+	padding: 2.115vh 2.777vw;
+	letter-spacing: 9%;
+	font-size: 1.645vh;
+	font-weight: 700;
+	color: #fff;
+	line-height: 100%;
+	border-radius: 50vw;
+	background-color: #0c122a;
+	cursor: pointer;
+}
+.whiteEllipse {
+	display: flex;
+	position: absolute;
+	width: 123.125vw;
+	height: 98.15vh;
+	background-color: #fff;
+	border-radius: 50%;
+	z-index: -10000;
+	top: 65.217vh;
+	left: -12.083vw;
+}
+.overlay {
+	z-index: 100000000000000;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	background-color: #0c122ab2;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}

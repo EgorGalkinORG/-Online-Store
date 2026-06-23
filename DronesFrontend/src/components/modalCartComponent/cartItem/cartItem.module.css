@@ -1,0 +1,85 @@
+.cartItem {
+    display: grid;
+    grid-template-columns: 7vw 1fr auto auto;
+    align-items: center;
+    gap: 1.5vw;
+    padding: 2vh 0;
+    border-bottom: 1px solid #E4E7EC;
+    width: 100%;
+
+    .itemImg {
+        width: 100%;
+        height: 8vh;
+        object-fit: contain;
+    }
+
+    .itemInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5vh;
+
+        .itemName {
+        font-size: 2.2vh;
+        font-weight: 500;
+        color: #0C122A;
+        text-decoration: none;
+        height: 4.8vh;
+        overflow: hidden;
+        }
+
+        .itemPricing {
+        display: flex;
+        gap: 0.8vw;
+        align-items: center;
+
+        .oldPrice {
+            font-size: 1.6vh;
+            color: #98A2B3;
+            text-decoration: line-through;
+        }
+
+        .currentPrice {
+            font-size: 1.8vh;
+            font-weight: 600;
+            color: #C44C21;
+        }
+        }
+    }
+
+    .counter {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        background: #F9FAFB;
+        padding: 0.5vh 0.8vw;
+        border-radius: 20px;
+        margin: 0 1vw;
+
+        .counterBtn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2vh;
+        color: #667085;
+        &:hover { color: #0C122A; }
+        }
+
+        .countValue {
+        font-size: 1.8vh;
+        font-weight: 500;
+        min-width: 1.5vw;
+        text-align: center;
+        }
+    }
+
+        .deleteBtn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5vh;
+        &:hover { opacity: 0.7; }
+    }
+}

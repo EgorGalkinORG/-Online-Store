@@ -1,0 +1,138 @@
+/* GT Walsheim Pro - Thin (100) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Thin.woff2") format("woff2");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-ThinOblique.woff2") format("woff2");
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - UltraLight (200) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-UltraLight.woff2") format("woff2");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-UltraLightOblique.woff2")
+		format("woff2");
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - Light (300) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-LightOblique.woff2") format("woff2");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - Regular (400) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-RegularOblique.woff2")
+		format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - Medium (500) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-MediumOblique.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - Bold (700) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-BoldOblique.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - UltraBold (800) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-UltraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-UltraBoldOblique.woff2")
+		format("woff2");
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* GT Walsheim Pro - Black (900) */
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-Black.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: url("./assets/fonts/GTWalsheimPro-BlackOblique.woff2") format("woff2");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}

@@ -1,0 +1,148 @@
+.modalCart {
+    display: flex;
+    flex-direction: column;
+    width: 32vw;
+    height: fit-content; 
+    max-height: 85vh; 
+    padding: 3vh 2.5vw;
+    background-color: #FFFFFF;
+    border: 0.25vh solid #c9c9c9;
+    border-radius: 1.5vh;
+    position: fixed;
+    right: 2vw;
+    top: 13vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cartTitle {
+    font-size: 2.8vh;
+    color: #0C122A;
+    font-weight: 500;
+    margin-bottom: 2vh;
+    flex-shrink: 0;
+}
+
+.cartList {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1vh;
+    margin-bottom: 2vh;
+}
+
+
+.cartList::-webkit-scrollbar {
+    width: 4px;
+}
+.cartList::-webkit-scrollbar-thumb {
+    background: #0C122A;
+    border-radius: 10px;
+}
+.cartList::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.footerContainer {
+    margin-top: auto;
+    padding-top: 2vh;
+    border-top: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+.summaryLine, .totalLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
+.summaryLine span:last-child,
+.totalLine span:last-child {
+    text-align: right;
+    min-width: 100px;
+}
+
+.finalPrice {
+    color: #E24B31;
+    font-size: 2.4vh;
+    font-weight: 600;
+}
+
+.cartActions {
+    display: flex;
+    gap: 1vw;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+
+.goToCartButton, .checkoutButton {
+    height: 6vh;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.5vh;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.goToCartButton {
+    flex: 1;
+    border: 2px solid #0C122A;
+    background: transparent;
+}
+
+.checkoutButton {
+    flex: 1.5;
+    background: #0C122A;
+    color: #fff;
+    border: none;
+}
+
+.emptyCartContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.emptyCartP {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0;
+    border-top: 0.25vh solid #D1D1D1;
+    border-bottom: 0.25vh solid #D1D1D1; 
+}
+
+.emptyCartText {
+    text-align: center;
+    color: #5E6370;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+.buttonWrapper {
+    width: 100%;
+    padding-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.continueButton {
+    padding: 12px 32px;
+    border: 2px solid #0C122A;
+    border-radius: 100px;
+    background: transparent;
+    color: #0C122A;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.continueButton:hover {
+    background-color: #0C122A;
+    color: #fff;
+}

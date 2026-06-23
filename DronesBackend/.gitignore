@@ -1,0 +1,10 @@
+node_modules
+package-lock.json
+
+# Keep environment variables out of version control
+package-lock.json
+.env
+/generated/prisma
+/src/generated
+database.db
+seed/

@@ -1,0 +1,1 @@
+export { RecoveryCodePage } from "./RecoveryCode";

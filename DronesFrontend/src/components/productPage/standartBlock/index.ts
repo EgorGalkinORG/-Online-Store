@@ -1,0 +1,1 @@
+export { StandartBlock } from "./standartBlock";
